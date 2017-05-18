@@ -1,0 +1,223 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= render partial: 'spree/shared/header' %>
+
+    <div class="container">
+      <div class="row" data-hook>
+        <%= breadcrumbs(@taxon) %>
+
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+        <%= yield :templates %>
+      </div>
+    </div> <!-- Container -->
+  
+  <footer id="footer" class="dark" style="background-color:#220E2F !important;position:absolute;bottom:0;clear:both;width:100%;">
+  <div id="footer-container_k" style="margin: auto; display:block;" class="row">
+    <div class="col-md-2 col-xs-6 col-md-offset-2" style="position: relative; left:8%;" id="first">
+      <div class="buffer">
+        <!--<a href="/careers"><p>Careers</p></a>-->
+        <a href="/shop"><p>Shop</p></a>
+        <a href="/press"><p>Press</p></a>
+        <a href="/blog"><p>Blog</p></a>
+      </div>
+    </div>
+    <div class="col-md-2 col-xs-6 col-md-push-2" style="position: relative; left:2%;">
+      <div class="buffer">
+        <a href="https://dome.zendesk.com"><p>Contact</p></a>
+        <a href="https://dome.zendesk.com"><p>Support</p></a>
+        <a href="https://www.elexausa.com/" target="_blank"><p>Elexa USA</p></a>
+        <a href="#" id="footer_modal_button"></a>
+      </div>
+    </div>
+    <div class="col-md-2 col-xs-6 col-md-pull-2" style="position: relative; right:4%;">
+      <div class="buffer">
+        <a href="/shop"><p>Products</p></a>
+        <a href="/how-tos"><p>How-Tos</p></a>
+        <a href="https://www.youtube.com/channel/UCuqjZpsNcaWkbH6T1_PTQ3Q" target="blank" ><p>YouTube</p></a>
+        <!--<a href="/news" target="blank" ><p>Dome News</p></a>-->
+      </div>
+    </div>
+    <div class="col-md-2 col-xs-6" style="position: relative; right:10%;">
+      <div class="buffer">
+
+        <a href="https://www.facebook.com/DomeByElexa" target="blank" ><p>Facebook</p></a>
+        <a href="https://twitter.com/DomeByElexa" target="blank" ><p>Twitter</p></a>
+        <a href="https://www.linkedin.com/company/16181754"target="blank" ><p>LinkedIn</p></a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="text-center removeToo" style="margin-bottom: 10px; padding: 3rem 2rem 0 2rem;">Sign up for Dome Home Automation News, Updates and Promotions</p>
+      <div class="form-inline" style="margin-bottom: -4rem; padding-top: 1rem;">
+        <div class="form-group">
+					<input  id="prospect-form" type="email" placeholder="Email Address" class="form-control" style="display:inline-block; height:39px; background-color: white; border: none;" required/>
+          <button id="form-submit" class="btn btn-active" style="display:inline-block;background:#11939A !important; height:39px;">Submit</button>
+        </div>
+      </div>
+        <small style="display: block; text-align: center; position: relative; top: 3rem;" id="message"></small>
+				<small style="display: block; text-align:center; color: #756E79;">Dome, by Elexa Consumer Products Inc. 2016 &#9400;</small>
+		</div>
+  </div>
+</footer>
+<!-- desktop footer end -->
+
+
+<!-- Mobile Footer -->
+
+  <footer id="footer2" class="dark" style="background-color:#220E2F !important;">
+    <div class="row">
+      <div class-"col-md-12">
+        <a href="https://domeha.com/"><img src="https://s3.us-east-2.amazonaws.com/dome-web-assets/logo-dark%402x.png" alt="Dome Logo" style="display:block; margin:4rem auto; height: 50px;" /></a>
+        <div class="section-one" style="margin-top:1rem;"> 
+
+          <a href="https://domeha.com/shop"><p>Products</p></a>
+          <a href="https://domeha.com/shop"><p>Shop</p></a>
+          <a href="https://domeha.com/dealers"><p>Dealers</p></a>
+          <a href="https://domeha.com/how-tos"><p>How-Tos</p></a>
+          <a href="https://dome.zendesk.com"><p>Support</p></a>
+            <a href="https://domeha.com/blog"><p>Blog</p></a>
+        </div>
+        <div class="section-two">
+         <a href="https://dome.zendesk.com"><p>Contact</p></a>
+          <a href="https://www.youtube.com/channel/UCuqjZpsNcaWkbH6T1_PTQ3Q" target="blank" ><p>YouTube</p></a>
+          <a href="https://www.elexausa.com/" target="_blank"><p>Elexa USA</p></a>
+          <a href="https://www.facebook.com/DomeByElexa" target="blank" ><p>Facebook</p></a>
+          <a href="https://twitter.com/DomeByElexa" target="blank" ><p>Twitter</p></a>
+          <a href="https://www.linkedin.com/company/16181754"target="blank" ><p>LinkedIn</p></a>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="text-center removeToo" style="margin-bottom: 10px; padding: 3rem 2rem 0 2rem;">Sign up for Dome Home Automation News, Updates and Promotions</p>
+      <div class="form-inline" style="margin-bottom: -4rem; padding-top: 1rem;">
+        <div class="form-group">
+					<input id="prospect-formMobile" type="email" placeholder="Email Address" class="form-control" style="display:inline-block; height:39px; background-color: white; border: none;"/>
+          <button id="form-submit" class="btn btn-active mobile-form-footer" style="display:inline-block;background:#11939A !important; height:39px;">Submit</button>
+        </div>
+      </div>
+        <small style="display: block; text-align: center; position: relative; top: 3rem;" class="mobile-message"></small>
+				<small style="display: block; text-align:center; color: #756E79;">Dome, by Elexa Consumer Products Inc. 2016 &#9400;</small>
+		</div>
+  </div>
+</footer>
+
+
+
+<!-- Mobile footer end -->
+<style media="screen">
+  #footer .row .col-md-2 .buffer a:hover  {
+    color: #d6bcf4;
+  }
+  @media screen and (max-width:500px) {
+    #logo img {
+      height: 75px !important;
+    }
+
+    #form-submit, #prospect-form {
+      vertical-align: middle;
+      height: 39px;
+    }
+  }
+  #form-submit, #prospect-form {
+      vertical-align: middle;
+      height: 39px;
+    }
+
+.form-containerExit {
+background-color: #fff!important;
+border-color: #e5e5e4!important;
+border-style: solid!important;
+border-width: 1px!important;
+box-sizing: border-box!important;
+height: 52px!important;
+flex-wrap: wrap!important;
+transition: all .4s ease!important;
+-moz-box-sizing: border-box!important;
+-webkit-flex-wrap: wrap!important;
+-ms-flex-wrap: wrap!important;
+-webkit-transition: all .4s ease!important;
+-webkit-box-lines: multiple!important;
+display: -webkit-box!important;
+display: -moz-box!important;
+display: -ms-flexbox!important;
+display: -webkit-flex!important;
+display: flex!important;
+width: 500px;
+margin: auto; 
+border:none;
+text-align: center;
+font-weight: 300;
+}
+.form-containerExit input {
+    width: 100%; 
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 200; 
+    color: #d3d3d3;
+}
+#launcher {
+  display: none; 
+}
+
+@media screen and (max-width:548px) {
+  .exitSmall {
+    width: 200px !important;
+  }
+  .form-containerExit {
+    width: 250px;
+  }
+  #nextExit {
+    width:250px !important;
+  }
+  .h3Exit {
+    font-size: 30px !important;
+    margin-bottom: 2rem !important;
+  }
+  .exit-dialog {
+    height: 450px !important;
+    top: 15%;
+  }
+}
+@media screen and (max-width: 450px) {
+  #footer {
+    display: none;
+  }
+}
+@media screen and (min-width: 450px) {
+  #footer2 {
+    display: none;
+  }
+}
+.section-one a {
+  color: white !important; 
+  font-size: 32px !important;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+.section-two a {
+  color: white !important;
+  font-weight: 100;
+  font-size: 16px;
+}
+</style>
+  </body>
+</html>
